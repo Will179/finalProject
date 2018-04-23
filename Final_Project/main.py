@@ -15,6 +15,7 @@ Week 2: Some technical difficulties with VS:Code.  Let myself get a bit lazy and
 as an excuse to be lazy.
 Plan for week 3: Use long weeked to catch up, and get back to where I need to be.  Hopefully I will have a
 player moving around a map by this time next week.
+week 3: Added Player and added movement functions to allow player to move around the screen.
 
 
 '''
