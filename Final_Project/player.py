@@ -4,7 +4,7 @@ class Player():
         """Initialize the ship and set its starting position."""
         self.screen = screen
         # Load the ship image and get its rect.
-        self.image = pygame.image.load('images/16x16_knight_sprite_by_obinsun-d7ksrh7.jpg')
+        self.image = pygame.image.load('images/Knight.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
         # Start each new ship at the bottom center of the screen.
