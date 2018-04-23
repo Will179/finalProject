@@ -1,7 +1,7 @@
 import pygame
 class Player():
     def __init__(self, screen):
-        """Initialize the ship and set its starting position."""
+        """Initialize the player and set its starting position."""
         self.screen = screen
         # Load the ship image and get its rect.
         self.image = pygame.image.load('images/Knight.png')
