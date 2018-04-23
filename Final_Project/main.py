@@ -25,7 +25,7 @@ import math
 import sys
 from settings import Settings
 from player import Player
-
+import game_functions as gf
 
 def run_game():
     # Initialize pygame, settings, and screen object.
@@ -39,6 +39,9 @@ def run_game():
 
     # Start the main loop for the game.
     while True:
+        gf.check_events(player)
+        player.update()
+        gf.update_screen(ai_settings, screen, player)
         # Redraw the screen during each pass through the loop.
         screen.fill(ai_settings.bg_color)
         player.blitme()
@@ -46,3 +49,4 @@ def run_game():
         pygame.display.flip()
 
 run_game()
+
