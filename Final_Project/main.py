@@ -36,7 +36,7 @@ def run_game():
     (ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption("Dungeon Crawler")
     #create player
-    player = Player(screen)
+    player = Player(ai_settings, screen)
 
     # Start the main loop for the game.
     while True:

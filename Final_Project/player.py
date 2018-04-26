@@ -4,7 +4,7 @@ class Player():
         """Initialize the player and set its starting position."""
         self.screen = screen
         self.ai_settings = ai_settings
-        # Load the ship image and get its rect.
+        # Load the player image and get its rect.
         self.image = pygame.image.load('images/Knight.png')
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
@@ -14,6 +14,7 @@ class Player():
 
         # Store a decimal value for the Players's center.
         self.center = float(self.rect.centerx)
+        self.center2 = float(self.rect.centery)
 
 
         # Movement flag
@@ -24,15 +25,19 @@ class Player():
 
     def update(self):
         """Update the player's position based on the movement flag."""
-        if self.moving_right:
-            self.rect.centerx += 1
-        if self.moving_left:
-            self.rect.centerx -= 1
+        # Update the ship's center value, not the rect.
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            self.center += self.ai_settings.player_speed_factor
+        if self.moving_left and self.rect.left > 0:
+            self.center -= self.ai_settings.player_speed_factor
         if self.moving_up:
-            self.rect.centery -= 1
+            self.center2 -= self.ai_settings.player_speed_factor
         if self.moving_down:
-            self.rect.centery += 1
+            self.center2 += self.ai_settings.player_speed_factor
 
+        # Update rect object from self.center.
+        self.rect.centerx = self.center
+        self.rect.centery = self.center2
 
     def blitme(self):
         """Draw the ship at its current location."""
