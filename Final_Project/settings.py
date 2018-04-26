@@ -1,3 +1,6 @@
+
+
+import pygame
 class Settings():
     """A class to store all settings for the game."""
     def __init__(self):
@@ -5,4 +8,8 @@ class Settings():
         # Screen settings
         self.screen_width = 1200
         self.screen_height = 800
+        self.image = pygame.image.load('images/background.png')
+        self.rect = self.image.get_rect()
         self.bg_color = (230, 230, 230)
+        # player settings
+        self.player_speed_factor = 1.5
