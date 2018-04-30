@@ -30,9 +30,9 @@ class Player():
             self.center += self.ai_settings.player_speed_factor
         if self.moving_left and self.rect.left > 0:
             self.center -= self.ai_settings.player_speed_factor
-        if self.moving_up:
+        if self.moving_up and self.rect.centery > 0:
             self.center2 -= self.ai_settings.player_speed_factor
-        if self.moving_down:
+        if self.moving_down and self.rect.centery < self.screen_rect.bottom:
             self.center2 += self.ai_settings.player_speed_factor
 
         # Update rect object from self.center.
