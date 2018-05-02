@@ -26,6 +26,7 @@ import math
 import sys
 from settings import Settings
 from player import Player
+from enemy import Enemy
 import game_functions as gf
 
 def run_game():
@@ -37,15 +38,21 @@ def run_game():
     pygame.display.set_caption("Dungeon Crawler")
     #create player
     player = Player(ai_settings, screen)
+    #create an enemy
+    enemy = Enemy(ai_settings, screen)
 
     # Start the main loop for the game.
     while True:
         gf.check_events(player)
         player.update()
+        gf.check_events(enemy)
+        enemy.update()
         gf.update_screen(ai_settings, screen, player)
+        gf.update_screen(ai_settings, screen, enemy)
         # Redraw the screen during each pass through the loop.
         screen.fill(ai_settings.bg_color)
         player.blitme()
+        enemy.blitme()
         # Make the most recently drawn screen visible.
         pygame.display.flip()
 
