@@ -44,8 +44,8 @@ def run_game():
     # Start the main loop for the game.
     while True:
         gf.check_events(player)
-        player.update()
         gf.check_events(enemy)
+        player.update()
         enemy.update()
         gf.update_screen(ai_settings, screen, player)
         gf.update_screen(ai_settings, screen, enemy)
